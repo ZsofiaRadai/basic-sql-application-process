@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Process 2 - Mentors and schools</title>
+  </head>
+  <body>
+    <table border="2" style="width:650px;">
+      {% for data in mentors_schools %}
+      <tr>
+        {% for field in data %}
+        <td>{{field}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
+
