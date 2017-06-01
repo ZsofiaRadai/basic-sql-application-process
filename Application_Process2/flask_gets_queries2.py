@@ -11,7 +11,7 @@ def main():
 
 
 @app.route('/mentors')
-def mentors_and_schools():
+def mentors_and_schools_page():
     mentors_schools = queries2.mentors_and_schools()
     return render_template('mentors_and_schools.html', mentors_schools=mentors_schools)
 
@@ -20,6 +20,24 @@ def mentors_and_schools():
 def all_school_page():
     schools = queries2.all_schools()
     return render_template('all_schools.html', schools=schools)
+
+
+@app.route('/mentors-by-country')
+def mentors_by_country_page():
+    count = queries2.mentors_by_country()
+    return render_template('mentors_by_country.html', count=count)
+
+
+@app.route('/contacts')
+def contacts_page():
+    contact = queries2.contacts()
+    return render_template('contacts.html', contact=contact)
+
+
+@app.route('/applicants')
+def applicants_page():
+    apps = queries2.applicants()
+    return render_template('applicants.html', apps=apps)
 
 
 if __name__ == '__main__':
