@@ -5,6 +5,12 @@
   </head>
   <body>
     <table border="2" style="width:650px;">
+      <tr>
+        <td><strong>First name</strong></td>
+        <td><strong>Last name</strong></td>
+        <td><strong>School</strong></td>
+        <td><strong>Country</strong></td>
+      </tr>
       {% for data in mentors_schools %}
       <tr>
         {% for field in data %}
