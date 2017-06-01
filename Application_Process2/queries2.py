@@ -55,6 +55,7 @@ def applicants():
     cursor = run_query("""SELECT applicants.first_name, applicants.application_code, applicants_mentors.creation_date \
                         FROM applicants \
                         INNER JOIN applicants_mentors ON applicants.id=applicants_mentors.applicant_id \
+                        WHERE applicants_mentors.creation_date >'2016-01-01' \
                         ORDER BY creation_date DESC;""")
     apps = cursor.fetchall()
     return apps
