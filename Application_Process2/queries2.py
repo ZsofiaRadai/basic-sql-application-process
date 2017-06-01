@@ -23,5 +23,14 @@ def mentors_and_schools():
     return mentors_schools
 
 
+def all_schools():
+    cursor = run_query("""SELECT mentors.first_name, mentors.last_name, schools.name, schools.country \
+                        FROM mentors \
+                        RIGHT JOIN schools ON mentors.city=schools.city \
+                        ORDER BY mentors.id;""")
+    schools = cursor.fetchall()
+    return schools
+
+
 if __name__ == '__main__':
     mentors_and_schools()

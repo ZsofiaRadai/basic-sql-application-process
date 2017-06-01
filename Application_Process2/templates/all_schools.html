@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Process 2 - All schools</title>
+  </head>
+  <body>
+    <table border="2" style="width:650px;">
+      {% for data in schools %}
+      <tr>
+        {% for field in data %}
+        <td>{{field}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

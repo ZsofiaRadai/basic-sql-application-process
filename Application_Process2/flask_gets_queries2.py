@@ -16,5 +16,11 @@ def mentors_and_schools():
     return render_template('mentors_and_schools.html', mentors_schools=mentors_schools)
 
 
+@app.route('/all-school')
+def all_school_page():
+    schools = queries2.all_schools()
+    return render_template('all_schools.html', schools=schools)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
