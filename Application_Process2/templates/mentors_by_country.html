@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Process 2 - Mentors by country</title>
+  </head>
+  <body>
+    <table border="2" style="width:250px;">
+      <tr>
+        <td align="center"><strong>Country</strong></td>
+        <td align="center"><strong>Mentors per country</strong></td>
+      </tr>
+      {% for data in count %}
+      <tr>
+        {% for field in data %}
+        <td align="center">{{field}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
