@@ -40,5 +40,11 @@ def applicants_page():
     return render_template('applicants.html', apps=apps)
 
 
+@app.route('/applicants-and-mentors')
+def applicants_and_mentors_page():
+    apps_ments = queries2.applicants_and_mentors()
+    return render_template('applicants_and_mentors.html', apps_ments=apps_ments)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

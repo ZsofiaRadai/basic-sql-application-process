@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Process 2 - Applicants and mentors</title>
+  </head>
+  <body>
+    <table border="2" style="width:650px;">
+      <tr>
+        <td><strong>Applicant's first name</strong></td>
+        <td><strong>Application code</strong></td>
+        <td><strong>Mentor's first name</strong></td>
+        <td><strong>Mentor's last name</strong></td>
+      </tr>
+      {% for data in apps_ments %}
+      <tr>
+        {% for field in data %}
+        <td>{{field}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

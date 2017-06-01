@@ -61,5 +61,15 @@ def applicants():
     return apps
 
 
+def applicants_and_mentors():
+    cursor = run_query("""SELECT applicants.first_name, applicants.application_code, mentors.first_name, mentors.last_name \
+                        FROM applicants \
+                        LEFT JOIN applicants_mentors ON applicants.id=applicants_mentors.applicant_id
+                        INNER JOIN mentors ON mentors.id=applicants_mentors.mentor_id
+                        ORDER BY applicants.id ASC;""")
+    apps_ments = cursor.fetchall()
+    return apps_ments
+
+
 if __name__ == '__main__':
-    mentors_and_schools()
+    print(applicants_and_mentors())
